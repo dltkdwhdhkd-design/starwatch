@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#04081c">
+<title>별지기 · STARWATCH — 조선 관상감 천문관</title>
+<meta name="description" content="황도 12궁, 계절·시각별 별자리, 달의 위상, 일식과 월식을 배우는 교실용 천문 게임">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%2306102e%27/%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2718%27 fill=%27%23f3ecd0%27/%3E%3Ccircle cx=%2740%27 cy=%2727%27 r=%2716%27 fill=%27%2306102e%27/%3E%3Ccircle cx=%2746%27 cy=%2716%27 r=%273%27 fill=%27%23ffd76e%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="cv"></canvas>
+
+<div id="hud" class="hide">
+  <div class="hl"><span id="hRank" class="rank">생도</span><span id="hScore" class="score">0</span><span id="hCombo" class="combo"></span></div>
+  <div class="hc"><div id="hProg"></div><div class="tbar"><i id="hTime"></i></div></div>
+  <div class="hr"><span id="hLife"></span><button id="bScene" class="ib">🌐 혼천의</button><button id="bSnd" class="ib">🔊</button><button id="bQuit" class="ib">✕</button></div>
+</div>
+
+<div id="toolbar" class="hide">
+  <div class="st"><button data-k="doy" data-d="-30">«</button><button data-k="doy" data-d="-1">‹</button><b id="tDate"></b><button data-k="doy" data-d="1">›</button><button data-k="doy" data-d="30">»</button></div>
+  <div class="st"><button data-k="hour" data-d="-1">‹</button><b id="tHour"></b><button data-k="hour" data-d="1">›</button></div>
+  <div class="st"><button data-k="L" data-d="-1">‹</button><b id="tMoon"></b><button data-k="L" data-d="1">›</button></div>
+</div>
+
+<div id="dirpad" class="hide">
+  <span></span><button data-az="0">북</button><span></span>
+  <button data-az="270">서</button><span></span><button data-az="90">동</button>
+  <span></span><button data-az="180">남</button><span></span>
+</div>
+
+<div id="toast"></div>
+<div id="panel" class="hide"></div>
+<div id="screen"></div>
+<div id="flash"></div>
+
+<script src="astro.js"></script>
+<script src="render.js"></script>
+<script src="game.js"></script>
+<script src="net.js"></script>
+</body>
+</html>
